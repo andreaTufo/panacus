@@ -29,7 +29,7 @@ if let Some(args) = args.subcommand_matches("table") {
         let order = args.get_one::<String>("order").cloned();
         let graph = args
             .get_one::<String>("gfa_file")
-            .expect("ordered-histgrowth has gfa file")
+            .expect("table has gfa file")
             .to_owned();
         let count = args
             .get_one::<CountType>("count")
@@ -65,7 +65,6 @@ if let Some(args) = args.subcommand_matches("table") {
                 total
             }],
         )];
-        // log::info!("{parameters:?}");
         Some(Ok(parameters))
     } else {
         None
